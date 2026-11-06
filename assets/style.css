@@ -115,3 +115,24 @@ footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--m
   .brand span { display: none; }
   section { padding: 44px 0; }
 }
+
+/* App screens (11-06: the site shows the app, and says what it needs before anything else) */
+.hero-shot img { display: block; width: min(300px, 70vw); height: auto; border-radius: 38px; border: 8px solid #111114; box-shadow: 0 24px 60px rgba(20, 30, 60, .18); }
+.must-box { background: #FFF6E5; border: 1px solid #F2DFB8; border-radius: 22px; padding: 32px 36px; }
+.must-box h2 { margin-top: 0; }
+.must { list-style: none; padding: 0; margin: 20px 0 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.must li { display: flex; gap: 14px; background: #fff; border-radius: 16px; padding: 20px; }
+.must .num { flex: none; width: 34px; height: 34px; border-radius: 50%; background: var(--blue); color: #fff; font-weight: 700; display: grid; place-items: center; }
+.must b { display: block; font-size: 18px; color: var(--ink); margin-bottom: 4px; }
+.must span { color: var(--text); }
+.must-note { margin: 18px 0 0; font-weight: 600; color: #8A5A0B; }
+.shots { display: flex; gap: 22px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 6px max(20px, calc((100% - 1040px) / 2)) 26px; scrollbar-width: thin; }
+.shots figure { flex: none; width: 250px; margin: 0; scroll-snap-align: center; }
+.shots img { display: block; width: 100%; height: auto; border-radius: 30px; border: 1px solid var(--line); box-shadow: 0 14px 34px rgba(20, 30, 60, .12); }
+.shots figcaption { margin-top: 12px; font-size: 14px; color: var(--muted); text-align: center; }
+@media (max-width: 860px) {
+  .hero-shot { justify-self: center; }
+  .must { grid-template-columns: 1fr; }
+  .must-box { padding: 26px 22px; }
+  .shots figure { width: 220px; }
+}
