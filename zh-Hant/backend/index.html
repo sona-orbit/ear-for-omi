@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>後台 — Ear for Omi</title>
+<meta name="description" content="Ear for Omi 的後台是兩個你自己架的服務：錄音後端把聲音變成逐字稿，第二大腦把逐字稿整理成主題、待辦與記憶。這一頁說明誰負責什麼、資料放在哪、要準備什麼、怎麼取得。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="後台 — Ear for Omi">
+<meta property="og:description" content="Ear for Omi 的後台是兩個你自己架的服務：錄音後端把聲音變成逐字稿，第二大腦把逐字稿整理成主題、待辦與記憶。這一頁說明誰負責什麼、資料放在哪、要準備什麼、怎麼取得。">
+<meta property="og:url" content="https://sona-orbit.github.io/ear-for-omi/zh-Hant/backend/">
+<meta property="og:image" content="https://sona-orbit.github.io/ear-for-omi/assets/icon.png">
+<link rel="canonical" href="https://sona-orbit.github.io/ear-for-omi/zh-Hant/backend/">
+<link rel="alternate" hreflang="en" href="https://sona-orbit.github.io/ear-for-omi/backend/"><link rel="alternate" hreflang="zh-Hant" href="https://sona-orbit.github.io/ear-for-omi/zh-Hant/backend/"><link rel="alternate" hreflang="x-default" href="https://sona-orbit.github.io/ear-for-omi/backend/">
+<link rel="icon" href="../../assets/favicon.png">
+<link rel="apple-touch-icon" href="../../assets/icon.png">
+<link rel="stylesheet" href="../../assets/style.css?v=6ead9543">
+<script>window.SITE_LOCALE='zh-Hant';window.SITE_PAGE='backend/';window.SITE_ROOT='../../';</script>
+<script defer src="../../assets/site.js?v=6ead9543"></script>
+</head>
+<body>
+<header class="site-header"><div class="wrap nav">
+<a class="brand" href="../../zh-Hant/"><img src="../../assets/icon.png" alt="" width="34" height="34"><span>Ear for Omi</span></a>
+<nav class="nav-links" aria-label="主選單"><a href="../../zh-Hant/">首頁</a><a href="../../zh-Hant/backend/" aria-current="page">後台</a><a href="../../zh-Hant/support/">支援</a><a href="../../zh-Hant/privacy/">隱私權</a></nav>
+<label><span class="sr-only">語言</span><select class="lang" id="language" aria-label="語言"><option value="en">English</option><option value="zh-Hant" selected>繁體中文</option></select></label>
+</div></header>
+<main>
+<section class="hero sub"><div class="wrap">
+<p class="pill"><img src="../../assets/icon.png" alt="" width="22" height="22">Ear for Omi 的另一半</p>
+<h1><span class="nb">聲音送到</span><span class="nb">你自己的電腦，</span><span class="dim"><span class="nb">整理好</span><span class="nb">再回到手機。</span></span></h1>
+<p class="lead">Ear for Omi 本身不整理任何東西。吊墜錄到的聲音，由兩個你自己架的服務處理。開發者沒有伺服器：下面每一塊都在你手上，或用你自己的金鑰。</p>
+</div></section>
+
+<section id="map"><div class="wrap">
+<h2 class="center">誰負責什麼</h2>
+<div class="arch"><div class="arch-col"><h3>吊墜</h3><span class="sub">戴在身上</span><div class="arch-card"><ul><li>錄音</li><li>按鈕：按一下下指令</li><li>沒連手機時，先存在吊墜裡</li></ul></div></div><div class="arch-link"><span>藍牙</span></div><div class="arch-col"><h3>iPhone</h3><span class="sub">Ear for Omi</span><div class="arch-card"><ul><li>用藍牙接收聲音</li><li>先存在手機，後端確認收到才刪</li><li>顯示主題、待辦、記憶</li><li>手機上不放任何金鑰</li></ul></div></div><div class="arch-link"><span>聲音</span></div><div class="arch-col wide"><h3>你自己的電腦</h3><span class="sub">例如一台常開的 Mac mini</span><div class="arch-pair"><div class="arch-card rec"><b>錄音後端</b><ul><li>把聲音存好</li><li>切成句子，認出誰在說話</li><li>交給模型轉成逐字稿</li><li>把對話寫進 Omi 一次</li><li>處理吊墜按鈕的語音指令</li></ul></div><div class="arch-link in"><span>逐字稿</span></div><div class="arch-card brain"><b>第二大腦</b><ul><li>把逐字稿整理成主題</li><li>每天寫一篇回顧</li><li>抽出待辦、記憶、人物</li><li>回答 App 的主題面</li></ul></div></div><p class="arch-folder"><svg class="ic folder-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3.5 6v14L9 18l6 2 5.5-2V4L15 6 9 4Z"/><path d="M9 4v14M15 6v14"/></svg>Markdown 資料夾</p></div><div class="arch-link"><span>金鑰</span></div><div class="arch-col outside"><h3>外部服務</h3><span class="sub">用你自己的金鑰</span><div class="arch-card"><ul><li>模型服務：轉錄、整理文字</li><li>Omi 雲端：每段對話寫入一次</li></ul></div></div></div>
+<p class="arch-note"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>整理好的主題、每日回顧、待辦與記憶，再從第二大腦回到手機的主題面。</p>
+</div></section>
+
+<section id="data"><div class="wrap">
+<h2 class="center">資料放在哪</h2>
+<p class="section-lead center">全部在你那台電腦上，分兩個地方。</p>
+<div class="cards two"><div class="card"><h3>錄音與逐字稿</h3><p>在錄音後端自己的資料夾：每段對話的錄音、逐字稿，還有它學到的聲紋。</p></div><div class="card"><h3>主題與筆記</h3><p>一個 Markdown 資料夾，用 Obsidian 或任何文字編輯器都能開。</p><ul class="tree"><li>主題/</li><li>每日/</li><li>待辦/</li><li>記憶/</li><li>人物/</li><li>目標/</li><li>記事/</li></ul></div></div>
+<ul class="points"><li>你可以直接改這些檔，第二大腦不會覆蓋你改過的內容。</li><li>刪除是移到垃圾桶資料夾，可以還原。</li><li>刪掉 App 不會動到後台的資料；手機上只有快取和足跡。</li></ul>
+</div></section>
+
+<section id="need"><div class="wrap narrow">
+<h2 class="center">要準備什麼</h2>
+<ol class="needs"><li><span class="num">1</span><div><b>一台常開的電腦</b><span>例如 Mac mini，長時間開機、不睡眠。安裝說明以 Mac mini 為準。</span></div></li><li><span class="num">2</span><div><b>Omi 開發者金鑰</b><span>在 Omi 網頁版建立，要有寫入權限。後台用它把對話寫進 Omi。</span></div></li><li><span class="num">3</span><div><b>一個模型服務的金鑰</b><span>OpenAI 相容的介面。需要一個能聽音檔的模型（轉錄）和一個整理文字的模型，可以是同一個。模型的費用由模型服務向你收。</span></div></li><li><span class="num">4</span><div><b>手機連得到那台電腦</b><span>手機和電腦在同一個私人網路，或替後台掛上 HTTPS。後台沒有登入機制，請只讓你信任的網路連得到它，不要直接開在公開網路上。</span></div></li><li><span class="num">5</span><div><b>會用終端機，或有 AI 助理幫你裝</b><span>安裝說明是寫給 AI 助理照著做的，每一步都有指令和確認方法。用 Docker Compose 跑，也可以直接在 macOS 上跑。</span></div></li></ol>
+</div></section>
+
+<section id="get"><div class="wrap narrow">
+<div class="backend-box"><h2>怎麼取得</h2><p>後台不隨 App 提供，也不在 App Store 上。寫信給我們，就會收到後台的程式和安裝說明。寄給你的是原始碼；模型檔和套件在安裝時從官方來源下載。</p>
+<a class="ghost solid" href="mailto:sona.orbit.hi@gmail.com?subject=%E7%B4%A2%E5%8F%96%20Ear%20for%20Omi%20%E5%BE%8C%E5%8F%B0">來信索取後台</a>
+<span class="mail-plain">sona.orbit.hi@gmail.com</span></div>
+</div></section>
+</main>
+<footer><div class="wrap">
+<div class="footer-row">
+<span>© 2026 Sona Orbit</span><span class="spacer"></span>
+<a href="../../zh-Hant/support/">支援</a>
+<a href="../../zh-Hant/privacy/">隱私權</a>
+<a href="mailto:sona.orbit.hi@gmail.com">sona.orbit.hi@gmail.com</a>
+</div>
+<p class="disclaimer">Ear for Omi 是獨立開發的第三方 App，與 Based Hardware 無隸屬關係；Omi 是其各自所有者的商標。</p>
+</div></footer>
+</body>
+</html>

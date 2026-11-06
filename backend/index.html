@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Backend — Ear for Omi</title>
+<meta name="description" content="The Ear for Omi backend is two services you run yourself: a recording backend that turns audio into transcripts, and a second brain that turns transcripts into topics, to-dos and memories. This page covers who does what, where the data lives, what you need, and how to get it.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Backend — Ear for Omi">
+<meta property="og:description" content="The Ear for Omi backend is two services you run yourself: a recording backend that turns audio into transcripts, and a second brain that turns transcripts into topics, to-dos and memories. This page covers who does what, where the data lives, what you need, and how to get it.">
+<meta property="og:url" content="https://sona-orbit.github.io/ear-for-omi/backend/">
+<meta property="og:image" content="https://sona-orbit.github.io/ear-for-omi/assets/icon.png">
+<link rel="canonical" href="https://sona-orbit.github.io/ear-for-omi/backend/">
+<link rel="alternate" hreflang="en" href="https://sona-orbit.github.io/ear-for-omi/backend/"><link rel="alternate" hreflang="zh-Hant" href="https://sona-orbit.github.io/ear-for-omi/zh-Hant/backend/"><link rel="alternate" hreflang="x-default" href="https://sona-orbit.github.io/ear-for-omi/backend/">
+<link rel="icon" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/icon.png">
+<link rel="stylesheet" href="../assets/style.css?v=6ead9543">
+<script>window.SITE_LOCALE='en';window.SITE_PAGE='backend/';window.SITE_ROOT='../';</script>
+<script defer src="../assets/site.js?v=6ead9543"></script>
+</head>
+<body>
+<header class="site-header"><div class="wrap nav">
+<a class="brand" href="../"><img src="../assets/icon.png" alt="" width="34" height="34"><span>Ear for Omi</span></a>
+<nav class="nav-links" aria-label="Main"><a href="../">Home</a><a href="../backend/" aria-current="page">Backend</a><a href="../support/">Support</a><a href="../privacy/">Privacy</a></nav>
+<label><span class="sr-only">Language</span><select class="lang" id="language" aria-label="Language"><option value="en" selected>English</option><option value="zh-Hant">繁體中文</option></select></label>
+</div></header>
+<main>
+<section class="hero sub"><div class="wrap">
+<p class="pill"><img src="../assets/icon.png" alt="" width="22" height="22">The other half of Ear for Omi</p>
+<h1><span class="nb">Audio goes to your own computer.</span><span class="dim"><span class="nb">The organized result comes back to your phone.</span></span></h1>
+<p class="lead">Ear for Omi does not organize anything by itself. What the pendant records is handled by two services you run yourself. The developer runs no server: every block below is in your hands, or uses your own keys.</p>
+</div></section>
+
+<section id="map"><div class="wrap">
+<h2 class="center">Who does what</h2>
+<div class="arch"><div class="arch-col"><h3>Pendant</h3><span class="sub">On you</span><div class="arch-card"><ul><li>Records</li><li>Button: press to give a command</li><li>Keeps audio on board when the phone is away</li></ul></div></div><div class="arch-link"><span>Bluetooth</span></div><div class="arch-col"><h3>iPhone</h3><span class="sub">Ear for Omi</span><div class="arch-card"><ul><li>Receives audio over Bluetooth</li><li>Keeps it on the phone until the backend confirms</li><li>Shows topics, to-dos and memories</li><li>Holds no keys</li></ul></div></div><div class="arch-link"><span>Audio</span></div><div class="arch-col wide"><h3>Your own computer</h3><span class="sub">For example an always-on Mac mini</span><div class="arch-pair"><div class="arch-card rec"><b>Recording backend</b><ul><li>Stores the audio safely</li><li>Splits it into sentences and recognizes who is speaking</li><li>Sends it to a model for transcription</li><li>Writes each conversation to Omi once</li><li>Handles voice commands from the pendant button</li></ul></div><div class="arch-link in"><span>Transcript</span></div><div class="arch-card brain"><b>Second brain</b><ul><li>Turns transcripts into topics</li><li>Writes a review of each day</li><li>Pulls out to-dos, memories and people</li><li>Answers the app’s topics side</li></ul></div></div><p class="arch-folder"><svg class="ic folder-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3.5 6v14L9 18l6 2 5.5-2V4L15 6 9 4Z"/><path d="M9 4v14M15 6v14"/></svg>Markdown folder</p></div><div class="arch-link"><span>Keys</span></div><div class="arch-col outside"><h3>Outside services</h3><span class="sub">With your own keys</span><div class="arch-card"><ul><li>A model service: transcription and text</li><li>Omi cloud: each conversation written once</li></ul></div></div></div>
+<p class="arch-note"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>The organized topics, daily reviews, to-dos and memories then travel from the second brain back to the topics side of the app.</p>
+</div></section>
+
+<section id="data"><div class="wrap">
+<h2 class="center">Where the data lives</h2>
+<p class="section-lead center">All of it is on your computer, in two places.</p>
+<div class="cards two"><div class="card"><h3>Recordings and transcripts</h3><p>In the recording backend’s own folder: each conversation’s recording and transcript, and the voiceprints it has learned.</p></div><div class="card"><h3>Topics and notes</h3><p>A folder of Markdown files that opens in Obsidian or any text editor.</p><ul class="tree"><li>主題/ topics</li><li>每日/ daily</li><li>待辦/ to-dos</li><li>記憶/ memories</li><li>人物/ people</li><li>目標/ goals</li><li>記事/ notes</li></ul></div></div>
+<ul class="points"><li>You can edit these files directly; the second brain will not overwrite what you changed.</li><li>Deleting moves a file to a trash folder, so it can be restored.</li><li>Deleting the app does not touch the backend’s data; the phone only holds a cache and your footprint.</li></ul>
+</div></section>
+
+<section id="need"><div class="wrap narrow">
+<h2 class="center">What you need</h2>
+<ol class="needs"><li><span class="num">1</span><div><b>An always-on computer</b><span>For example a Mac mini that stays on and does not sleep. The setup guide is written for a Mac mini.</span></div></li><li><span class="num">2</span><div><b>An Omi developer key</b><span>Created on Omi’s web app, with write access. The backend uses it to write conversations to Omi.</span></div></li><li><span class="num">3</span><div><b>A key for a model service</b><span>An OpenAI-compatible API. You need one model that can take audio (transcription) and one for text; they can be the same. The model service bills you for usage.</span></div></li><li><span class="num">4</span><div><b>A way for the phone to reach that computer</b><span>Put the phone and the computer on the same private network, or serve the backend over HTTPS. The backend has no sign-in, so only let networks you trust reach it; do not expose it to the public internet.</span></div></li><li><span class="num">5</span><div><b>Comfort with a terminal, or an AI assistant to install it</b><span>The setup guide is written for an AI assistant to follow, with a command and a check for every step. It runs with Docker Compose, or directly on macOS.</span></div></li></ol>
+</div></section>
+
+<section id="get"><div class="wrap narrow">
+<div class="backend-box"><h2>How to get it</h2><p>The backend does not come with the app and is not on the App Store. Email us and we will send you the backend’s code and the setup guide. You receive source code; model files and packages are downloaded from their official sources during setup. The guide and the backend’s web pages are currently in Traditional Chinese.</p>
+<a class="ghost solid" href="mailto:sona.orbit.hi@gmail.com?subject=Ear%20for%20Omi%20backend">Email us for the backend</a>
+<span class="mail-plain">sona.orbit.hi@gmail.com</span></div>
+</div></section>
+</main>
+<footer><div class="wrap">
+<div class="footer-row">
+<span>© 2026 Sona Orbit</span><span class="spacer"></span>
+<a href="../support/">Support</a>
+<a href="../privacy/">Privacy</a>
+<a href="mailto:sona.orbit.hi@gmail.com">sona.orbit.hi@gmail.com</a>
+</div>
+<p class="disclaimer">Ear for Omi is an independently developed third-party app and is not affiliated with Based Hardware. Omi is a trademark of its respective owner.</p>
+</div></footer>
+</body>
+</html>
