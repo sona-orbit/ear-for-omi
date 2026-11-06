@@ -304,3 +304,61 @@ section { scroll-margin-top: 72px; }
   .nav-links { gap: 12px; }
   .chain li + li { margin-left: 22px; }
 }
+
+/* backend page diagrams (after the earlier internal ones): lead with coloured keywords, role cards, big diagram card */
+.k-c { color: var(--clay); } .k-b { color: var(--blue-ink); }
+.map-lead { max-width: 46em; margin: 0 auto 30px; text-align: center; font-size: clamp(17px, 1.6vw, 19px); color: var(--text); text-wrap: pretty; }
+.map-lead b { font-weight: 700; }
+.roles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 22px; }
+.roles li { display: flex; gap: 12px; align-items: center; border: 1px solid var(--line); border-radius: 18px; padding: 14px 16px; }
+.role-ic { flex: none; width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: color-mix(in srgb, currentColor 12%, #fff); }
+.roles li.k-c .role-ic { color: var(--clay); } .roles li.k-b .role-ic { color: var(--blue); }
+.roles b { display: block; font-size: 16px; color: var(--ink); }
+.roles li div span { font-size: 13.5px; color: var(--muted); line-height: 1.45; display: block; }
+.diagram { border: 1px solid var(--line); border-radius: 30px; padding: 28px; background: #fff; box-shadow: 0 18px 50px rgba(20, 30, 60, .06); }
+.diagram + .cards { margin-top: 24px; }
+.diagram svg { display: block; width: 100%; height: auto; }
+.diagram-m { display: none; }
+.arch-svg .node { cursor: pointer; outline: none; }
+.arch-svg .node, .arch-svg .edge { transition: opacity .18s ease; }
+.arch-svg.focus .node:not(.on), .arch-svg.focus .edge:not(.on) { opacity: .14; }
+.arch-svg .node:focus-visible rect { stroke-width: 3.5; }
+.legend { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 22px; margin-top: 20px; font-size: 13.5px; color: var(--muted); }
+.lg::before { content: ""; display: inline-block; width: 26px; height: 3px; border-radius: 2px; background: currentColor; vertical-align: middle; margin-right: 8px; }
+.lg.c::before { color: var(--clay); } .lg.b::before { color: var(--blue); } .lg.g::before { color: #8a8f9c; }
+.lg.d::before { height: 12px; width: 18px; background: none; border: 1.5px dashed #c9cfdb; border-radius: 4px; }
+.legend .hint { margin-left: auto; }
+.show-all { font: inherit; font-size: 13.5px; font-weight: 600; color: #fff; background: var(--clay); border: 0; border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+/* narrow screens: the stacked versions */
+.diagram-m.arch { grid-template-columns: 1fr; margin-top: 0; }
+.arch-card .name { font-size: 16px; }
+.arch-card ul li { display: grid; grid-template-columns: 6.2em 1fr; gap: 10px; }
+html[lang="en"] .arch-card ul li { grid-template-columns: 8.4em 1fr; }
+.arch-card ul li b { display: inline; font-size: 14px; margin: 0; color: var(--ink); }
+.arch-card ul li span { color: var(--muted); }
+.arch-link.clay { color: var(--clay); }
+.arch-col .gap { height: 12px; }
+.diagram-m .arch-folder { float: none; display: flex; gap: 10px; margin-top: 12px; border-radius: 14px; background: var(--blue-soft); border: 0; font-weight: 400; }
+.flow h4 { margin: 0 0 10px; font-size: 13px; color: var(--muted); font-weight: 600; }
+.flow-chips { display: grid; gap: 8px; }
+.flow-chips li { border: 1px solid var(--line); border-radius: 12px; padding: 9px 14px; }
+.flow-chips li b { display: block; font-size: 14.5px; }
+.flow-chips li span { font-size: 13px; color: var(--muted); }
+.flow-chips.kinds { grid-template-columns: repeat(2, 1fr); }
+.flow-chips.kinds li { background: var(--blue-soft); border: 0; border-radius: 999px; text-align: center; color: var(--blue-ink); }
+.flow-brain { background: var(--blue); color: #fff; border-radius: 18px; padding: 16px; text-align: center; }
+.flow-brain b { display: block; font-size: 19px; } .flow-brain span { font-size: 13px; color: #dbe6ff; }
+.flow-down { height: 34px; background: linear-gradient(#a9c1ff, #a9c1ff) center / 2px 100% no-repeat; position: relative; }
+.flow-down::after { content: ""; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); border: 6px solid transparent; border-top-color: #a9c1ff; border-bottom: 0; }
+@media (max-width: 1000px) {
+  .diagram { padding: 16px; border-radius: 24px; }
+  .diagram-d { display: none; }
+  .diagram-m { display: block; }
+  .diagram-m.arch { display: grid; }
+  .roles { grid-template-columns: repeat(2, 1fr); }
+  .legend .hint, .show-all { display: none; }
+}
+@media (max-width: 600px) { .roles { grid-template-columns: 1fr; } }
+.wrap.wide { width: min(1320px, 100% - 40px); }
+.wrap.wide .cards.two, .wrap.wide .points, .wrap.wide .roles { max-width: 1120px; margin-left: auto; margin-right: auto; }
+.arch-card.rec ul li b, .arch-card.brain ul li b { color: var(--ink); }

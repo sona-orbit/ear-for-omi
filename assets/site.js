@@ -27,3 +27,26 @@
     if (next !== current) location.href = urlFor(next);
   });
 })();
+
+// Architecture diagram: click a block to keep only its own connections; click it again or "show all" to go back.
+(() => {
+  const svg = document.querySelector('svg.arch-svg');
+  if (!svg) return;
+  const all = document.querySelector('.show-all');
+  const nodes = [...svg.querySelectorAll('.node')], edges = [...svg.querySelectorAll('.edge')];
+  let current = null;
+  const show = (id) => {
+    current = id;
+    svg.classList.toggle('focus', !!id);
+    if (all) all.hidden = !id;
+    const keep = new Set(id ? [id] : []);
+    edges.forEach(e => { const ends = e.dataset.ends.split(' '); const on = !!id && ends.includes(id); e.classList.toggle('on', on); if (on) ends.forEach(x => keep.add(x)); });
+    nodes.forEach(n => n.classList.toggle('on', keep.has(n.dataset.id)));
+  };
+  nodes.forEach(n => {
+    const pick = () => show(current === n.dataset.id ? null : n.dataset.id);
+    n.addEventListener('click', pick);
+    n.addEventListener('keydown', (ev) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); pick(); } });
+  });
+  if (all) all.addEventListener('click', () => show(null));
+})();
