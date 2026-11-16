@@ -6,6 +6,6 @@ Served by GitHub Pages at https://sona-orbit.github.io/ear-for-omi/
 
 - Home, support and privacy pages in English and 繁體中文
 - Static HTML and CSS with a little vanilla JavaScript; no build step on this repository
-- Contact: sona.orbit.hi@gmail.com
+- Published by Sona Orbit. Issues and pull requests are turned off.
 
 Ear for Omi is not affiliated with Based Hardware. Omi is a trademark of its respective owner.
